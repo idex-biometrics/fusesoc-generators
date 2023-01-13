@@ -1,0 +1,19 @@
+CAPI=2:
+name: idex:utils:generators:0.1.0
+
+generators:
+  cmake:
+    interpreter: python3
+    command: cmake.py
+    description: Runs CMake
+    usage: |
+      This generator runs CMake.
+
+      A build directory is created and used for running the build.  The cmake_args are concatenated and passed
+      to 'cmake .. " ".join(cmake_args)'.
+
+      Parameters:
+        cmake_args (list)   : A list of CMake arguments passed during invocation.
+        make_targets (list) : A list of make targets to call in order. If empty, make will be called with no args.
+        files (list)        : A list of files, in the same format as CAPI2 fileset files, that defines which 
+                              output artefacts should be forwarded by the generator.
